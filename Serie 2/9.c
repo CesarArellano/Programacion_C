@@ -14,12 +14,12 @@ void convertirFrase(char fraseOriginal[], char fraseMod[]);
 int main (void)
 {
 	char frase[200],fraseModificada[200];
-  	printf("Escribe la frase: ");
-  	scanf(" %[^\n]",frase);
-  	convertirFrase(frase,fraseModificada);
-  	system("clear");
-  	printf("Frase original: %s\n",frase);
-  	printf("Frase modificada: %s\n",fraseModificada);
+  printf("Escribe la frase: ");
+  scanf(" %[^\n]",frase);
+  convertirFrase(frase,fraseModificada);
+  system("clear");
+  printf("Frase original: %s\n",frase);
+  printf("Frase modificada: %s\n",fraseModificada);
 	return 0;
 }
 
@@ -35,12 +35,11 @@ void convertirFrase(char fraseOriginal[], char fraseMod[])
 {
 	int i;
 	for(i = 0; fraseOriginal[i] != '\0'; i++)
-  	{
-  		if((fraseOriginal[i] >= 'a' && fraseOriginal[i] <= 'z') && (fraseOriginal[i+1] == ' ' || fraseOriginal[i-1] == ' ' || fraseOriginal[i+1] == '\0' || i == 0))
-  			fraseMod[i] = fraseOriginal[i]-'a'+'A';
-  		else
-  			fraseMod[i] = fraseOriginal[i];
-  	}
-  	fraseMod[i] = '\0';
-
+	{
+		if((fraseOriginal[i] >= 'a' && fraseOriginal[i] <= 'z') && (fraseOriginal[i+1] == ' ' || fraseOriginal[i-1] == ' ' || fraseOriginal[i+1] == '\0' || i == 0))
+			fraseMod[i] = fraseOriginal[i]-'a'+'A';
+  	else
+			fraseMod[i] = fraseOriginal[i];
+  }
+  fraseMod[i] = '\0';
 }

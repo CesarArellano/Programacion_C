@@ -17,11 +17,11 @@ int main (void)
 	printf("Escribe la frase: ");
 	scanf(" %[^\n]",frase);
 	convertirCadenas(frase,fraseMayusculas,fraseMinusculas);
-  	system("clear"); // Borrar contenido de la terminal.
-  	printf("Frase original: %s\n",frase);
-  	printf("Frase en mayúsculas: %s\n",fraseMayusculas);
-  	printf("Frase en minúsculas: %s\n",fraseMinusculas);
-  	return 0;
+  system("clear"); // Borrar contenido de la terminal.
+  printf("Frase original: %s\n",frase);
+  printf("Frase en mayúsculas: %s\n",fraseMayusculas);
+  printf("Frase en minúsculas: %s\n",fraseMinusculas);
+  return 0;
 }
 
 /*
@@ -35,22 +35,20 @@ int main (void)
 void convertirCadenas(char fraseOriginal[],char fraseMay[], char fraseMin[])
 {
 	int i;
-
 	for(i = 0; fraseOriginal[i] != '\0'; i++)
 	{
 		fraseMay[i] = fraseOriginal[i];
-	    fraseMin[i] = fraseOriginal[i];
+	  fraseMin[i] = fraseOriginal[i];
 
-	    if(fraseOriginal[i] >= 'a' && fraseOriginal[i] <= 'z') // Convertir a mayúsculas
-	    {
-	      fraseMay[i] = fraseOriginal[i]-'a'+'A';
-	    }
-	    if(fraseOriginal[i] >= 'A' && fraseOriginal[i] <= 'Z') // Convertir a minúsculas
-	    {
-	      fraseMin[i] = fraseOriginal[i]-'A'+'a';
-	    }
+	  if(fraseOriginal[i] >= 'a' && fraseOriginal[i] <= 'z') // Convertir a mayúsculas
+	  {
+			fraseMay[i] = fraseOriginal[i]-'a'+'A';
+	  }
+	  if(fraseOriginal[i] >= 'A' && fraseOriginal[i] <= 'Z') // Convertir a minúsculas
+	  {
+	    fraseMin[i] = fraseOriginal[i]-'A'+'a';
+	  }
 	}
-
 	fraseMay[i] = '\0'; // Colocamos caracter de fin de línea a las dos cadenas.
 	fraseMin[i] = '\0';
 }
